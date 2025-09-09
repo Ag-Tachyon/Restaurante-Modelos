@@ -7,8 +7,8 @@ import objetosConcretos.menus.MenuVegetariano;
 public class Main {
 
     // Este método podría ir dentro de la clase Main, pero fuera del método main
-    public static boolean preguntarPorBebida(Scanner scanner) {
-        System.out.println("¿Quieres una bebida? (s/n)");
+    public static boolean preguntarPorBebida(Scanner scanner , String tipoDeAlimento) {
+        System.out.println("¿Quieres " + tipoDeAlimento + "? (s/n)");
         String respuesta = scanner.next();
         return respuesta.equalsIgnoreCase("s");
     }
@@ -36,7 +36,7 @@ public class Main {
                 menuSeleccionado = new MenuVegetariano();
                 System.out.println("Has elegido el menú vegetariano.");
 
-                boolean quiereBebida = preguntarPorBebida(scanner);
+                boolean quiereBebida = preguntarPorBebida(scanner , "Bebida");
         
                 if (quiereBebida) {
                     Bebida bebida = menuSeleccionado.traerBebida();  // Usamos la fábrica para crear la bebida !!!recordar¡¡¡
