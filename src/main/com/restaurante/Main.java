@@ -6,6 +6,7 @@ import fabricas.PlatoPrincipal;
 import fabricas.Postre;
 import fabricas.fabricaMenu;
 import objetosConcretos.menus.MenuVegetariano;
+import objetosConcretos.menus.MenuGourmet;
 
 public class Main {
 
@@ -18,7 +19,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println("\nBienvenido, elige el tipo de menú que quieres: \n1. Vegetariano 🥒 \n2. Infantil 🍔 \n3. Japonés 🍙");
+        System.out.println("\nBienvenido, elige el tipo de menú que quieres: \n1. Gourmet 🍖 \n2. Infantil 🍔 \n3. Japonés 🍙");
     
         // Crea un objeto Scanner para leer la entrada del usuario
         Scanner scanner = new Scanner(System.in);
@@ -65,7 +66,7 @@ public class Main {
                 
             break;
             case 2:
-                System.out.println("Has elegido el menú infantil.");
+                System.out.println("Has elegido el menú Gourmet.");
                 break;
             case 3:
                 System.out.println("Has elegido el menú japonés.");
