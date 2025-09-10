@@ -1,5 +1,5 @@
 package fabricas;
 
 public interface Postre {
-    void crearPostre();
+    String crearPostre();
 }

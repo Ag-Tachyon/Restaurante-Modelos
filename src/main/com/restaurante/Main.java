@@ -1,13 +1,16 @@
 import java.util.Scanner;
 
 import fabricas.Bebida;
+import fabricas.Entrada;
+import fabricas.PlatoPrincipal;
+import fabricas.Postre;
 import fabricas.fabricaMenu;
 import objetosConcretos.menus.MenuVegetariano;
 
 public class Main {
 
     // Este método podría ir dentro de la clase Main, pero fuera del método main
-    public static boolean preguntarPorBebida(Scanner scanner , String tipoDeAlimento) {
+    public static boolean preguntarPlato(Scanner scanner , String tipoDeAlimento) {
         System.out.println("¿Quieres " + tipoDeAlimento + "? (s/n)");
         String respuesta = scanner.next();
         return respuesta.equalsIgnoreCase("s");
@@ -33,14 +36,31 @@ public class Main {
         
         switch (opcionElegida) {
             case 1:
-                menuSeleccionado = new MenuVegetariano();
+                menuSeleccionado = new MenuVegetariano(); // -> Creamos el objeto del menú seleccionado XD
                 System.out.println("Has elegido el menú vegetariano.");
 
-                boolean quiereBebida = preguntarPorBebida(scanner , "Bebida");
-        
+                boolean quiereBebida = preguntarPlato(scanner , "Bebida");
                 if (quiereBebida) {
                     Bebida bebida = menuSeleccionado.traerBebida();  // Usamos la fábrica para crear la bebida !!!recordar¡¡¡
                     System.out.println(bebida.crearBebida());
+                }
+                
+                boolean quiereEntrada = preguntarPlato(scanner , "Entrada");
+                if(quiereEntrada) {
+                    Entrada entrada = menuSeleccionado.traerEntrada();  // Usamos la fábrica para crear la bebida !!!recordar¡¡¡
+                    System.out.println(entrada.crearEntrada());
+                }
+
+                boolean quierePlatoPrincipal = preguntarPlato(scanner , "Plato Principal");
+                if(quierePlatoPrincipal){
+                    PlatoPrincipal platoPrinc = menuSeleccionado.traerPlatoPrincipal();
+                    System.out.println(platoPrinc.crearPlatoPrincipal());
+                }
+
+                boolean quierePostre = preguntarPlato(scanner, "Postre");
+                if(quierePostre){
+                    Postre quierPostre = menuSeleccionado.traerPostre();
+                    System.out.println(quierPostre.crearPostre());
                 }
                 
             break;

@@ -1,18 +1,26 @@
 package objetosConcretos.menus;
 
 import fabricas.Bebida;
+import fabricas.Entrada;
+import fabricas.PlatoPrincipal;
+import fabricas.Postre;
+import objetosConcretos.alimentos.EntradaVegetariana;
+import objetosConcretos.alimentos.platoPrincipalVeg;
 import fabricas.fabricaMenu;
 import objetosConcretos.alimentos.BebidaVegetariana;
+import objetosConcretos.alimentos.PostreVegetariano;
 
 public class MenuVegetariano implements fabricaMenu {
     @Override
-    public String traerEntrada() {
-        return "treyendo";
+    public Entrada traerEntrada() {
+        EntradaVegetariana entradaFinal = new EntradaVegetariana();
+        return entradaFinal;
     }
 
     @Override
-    public String traerPlatoPrincipal() {
-        return "trayendo";
+    public PlatoPrincipal traerPlatoPrincipal() {
+        PlatoPrincipal platoPrincipalFinal = new platoPrincipalVeg();
+        return platoPrincipalFinal;
     }
 
     @Override
@@ -22,7 +30,8 @@ public class MenuVegetariano implements fabricaMenu {
     }
 
     @Override
-    public String traerPostre() {
-        return "kjh";
+    public Postre traerPostre() {
+        Postre postreFinal = new Postre();
+        return postreFinal;
     }
 }

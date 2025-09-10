@@ -1,8 +1,8 @@
 package fabricas;
 
 public interface fabricaMenu {
-    String traerEntrada();
+    Entrada traerEntrada();
     Bebida traerBebida();
-    String traerPlatoPrincipal();
-    String traerPostre();
+    PlatoPrincipal traerPlatoPrincipal();
+    Postre traerPostre();
 }

@@ -1,5 +1,5 @@
 package fabricas;
 
 public interface PlatoPrincipal {
-    void crearPlatoPrincipal();
+    String crearPlatoPrincipal();
 }

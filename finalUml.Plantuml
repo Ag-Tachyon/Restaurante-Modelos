@@ -1,0 +1,111 @@
+@startuml
+
+left to right direction
+
+
+interface fabMenu{
+    + traerBebida()
+    + traerEntrada()
+    + traerPlatoPrincipal()
+    + traerPostre()
+}
+
+interface bebida{
+    + crearBebida()
+}
+
+interface entrada{
+    + crearEntrada()
+}
+
+interface platoPrincipal{
+    + crearPlatoPrincipal()
+}
+
+interface postre{
+    + crearPostre()
+}
+
+fabMenu <.. bebida : Dependencia
+fabMenu <.. entrada
+fabMenu <.. platoPrincipal
+fabMenu <.. postre
+
+class MenuVegetariano{
+}
+
+class MenuGourmet{
+}
+
+class MenuJapon{
+}
+
+MenuVegetariano ..|> fabMenu : Implementa
+MenuGourmet ..|> fabMenu
+MenuJapon ..|> fabMenu
+
+class EntredaVegetariana{
+}
+
+class BebidaVegerariana{
+}
+
+class platoPrincipalVeg{
+}
+
+class PostreVegetariano{
+}
+
+EntredaVegetariana ..|> entrada 
+BebidaVegerariana ..|> bebida 
+platoPrincipalVeg ..|> platoPrincipal
+PostreVegetariano ..|> postre
+
+MenuVegetariano --> BebidaVegerariana
+MenuVegetariano --> PostreVegetariano
+MenuVegetariano --> EntredaVegetariana
+MenuVegetariano --> platoPrincipal
+
+class BebidaGourmet{
+}
+
+class EntradaGourmet{
+}
+
+class platoPrincipalGour{
+}
+
+class PostreGourmet{
+}
+
+EntradaGourmet ..|> entrada 
+BebidaGourmet ..|> bebida 
+platoPrincipalGour ..|> platoPrincipal
+PostreGourmet ..|> postre
+
+MenuGourmet --> BebidaGourmet
+MenuGourmet --> PostreGourmet : asociación
+MenuGourmet --> EntradaGourmet
+MenuGourmet --> platoPrincipalGour
+
+
+class EntradaJapones{
+}
+
+class BebidaJapones{
+}
+
+class platoPrincipalJapones{
+}
+
+class PostreJapones{
+}
+
+
+MenuJapon --> BebidaJapones
+MenuJapon --> PostreJapones
+MenuJapon --> EntradaJapones
+MenuJapon --> platoPrincipalJapones
+
+
+@enduml
