@@ -31,7 +31,7 @@ public class MenuVegetariano implements fabricaMenu {
 
     @Override
     public Postre traerPostre() {
-        Postre postreFinal = new Postre();
+        Postre postreFinal = new PostreVegetariano();
         return postreFinal;
     }
 }

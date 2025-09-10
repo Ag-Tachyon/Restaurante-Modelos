@@ -61,10 +61,10 @@ BebidaVegerariana ..|> bebida
 platoPrincipalVeg ..|> platoPrincipal
 PostreVegetariano ..|> postre
 
-MenuVegetariano --> BebidaVegerariana
-MenuVegetariano --> PostreVegetariano
-MenuVegetariano --> EntredaVegetariana
-MenuVegetariano --> platoPrincipal
+MenuVegetariano ..> BebidaVegerariana
+MenuVegetariano ..> PostreVegetariano
+MenuVegetariano ..> EntredaVegetariana
+MenuVegetariano ..> platoPrincipal
 
 class BebidaGourmet{
 }
@@ -83,10 +83,10 @@ BebidaGourmet ..|> bebida
 platoPrincipalGour ..|> platoPrincipal
 PostreGourmet ..|> postre
 
-MenuGourmet --> BebidaGourmet
-MenuGourmet --> PostreGourmet : asociación
-MenuGourmet --> EntradaGourmet
-MenuGourmet --> platoPrincipalGour
+MenuGourmet ..> BebidaGourmet
+MenuGourmet ..> PostreGourmet : asociación
+MenuGourmet ..> EntradaGourmet
+MenuGourmet ..> platoPrincipalGour
 
 
 class EntradaJapones{
@@ -102,10 +102,10 @@ class PostreJapones{
 }
 
 
-MenuJapon --> BebidaJapones
-MenuJapon --> PostreJapones
-MenuJapon --> EntradaJapones
-MenuJapon --> platoPrincipalJapones
+MenuJapon ..> BebidaJapones
+MenuJapon ..> PostreJapones
+MenuJapon ..> EntradaJapones
+MenuJapon ..> platoPrincipalJapones
 
 
 @enduml
