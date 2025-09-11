@@ -4,11 +4,11 @@ import fabricas.Bebida;
 import fabricas.Entrada;
 import fabricas.PlatoPrincipal;
 import fabricas.Postre;
-import objetosConcretos.alimentos.EntradaVegetariana;
-import objetosConcretos.alimentos.platoPrincipalVeg;
+import objetosConcretos.alimentos.vegetariana.BebidaVegetariana;
+import objetosConcretos.alimentos.vegetariana.EntradaVegetariana;
+import objetosConcretos.alimentos.vegetariana.PostreVegetariano;
+import objetosConcretos.alimentos.vegetariana.platoPrincipalVeg;
 import fabricas.fabricaMenu;
-import objetosConcretos.alimentos.BebidaVegetariana;
-import objetosConcretos.alimentos.PostreVegetariano;
 
 public class MenuVegetariano implements fabricaMenu {
     @Override

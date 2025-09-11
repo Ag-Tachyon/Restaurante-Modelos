@@ -26,10 +26,10 @@ interface postre{
     + crearPostre()
 }
 
-fabMenu <.. bebida : Dependencia
-fabMenu <.. entrada
-fabMenu <.. platoPrincipal
-fabMenu <.. postre
+fabMenu ..> bebida : Dependencia
+fabMenu ..> entrada
+fabMenu ..> platoPrincipal
+fabMenu ..> postre
 
 class MenuVegetariano{
 }

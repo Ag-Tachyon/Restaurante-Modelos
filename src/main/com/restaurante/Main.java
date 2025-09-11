@@ -6,6 +6,7 @@ import fabricas.PlatoPrincipal;
 import fabricas.Postre;
 import fabricas.fabricaMenu;
 import objetosConcretos.menus.MenuVegetariano;
+import objetosConcretos.alimentos.gourmet.PostreGourmet;
 import objetosConcretos.menus.MenuGourmet;
 
 public class Main {
@@ -19,7 +20,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println("\nBienvenido, elige el tipo de menú que quieres: \n1. Gourmet 🍖 \n2. Infantil 🍔 \n3. Japonés 🍙");
+        System.out.println("\nBienvenido, elige el tipo de menú que quieres: \n1. Vegetariano 🥒 \n2. Gourmet 🍔 \n3. Japonés 🍙");
     
         // Crea un objeto Scanner para leer la entrada del usuario
         Scanner scanner = new Scanner(System.in);
@@ -66,7 +67,33 @@ public class Main {
                 
             break;
             case 2:
+                menuSeleccionado = new MenuGourmet();
                 System.out.println("Has elegido el menú Gourmet.");
+
+                boolean quiereBebidaGourmet = preguntarPlato(scanner, "Bebida Gourmet");
+                if(quiereBebidaGourmet){
+                    Postre postreGourmet = menuSeleccionado.traerPostre();
+                    System.out.println(postreGourmet.crearPostre());
+                }
+
+                boolean quiereEntradaGourmet = preguntarPlato(scanner, "Entrada");
+                if(quiereEntradaGourmet){
+                    Entrada entradaGourmet = menuSeleccionado.traerEntrada();
+                    System.out.println(entradaGourmet.crearEntrada());
+                }
+
+                boolean quierePlatoPrincipalGourmet = preguntarPlato(scanner, "Plato Principal");
+                if(quierePlatoPrincipalGourmet){
+                    PlatoPrincipal PlatoPrincipalGourmet = menuSeleccionado.traerPlatoPrincipal();
+                    System.out.println(PlatoPrincipalGourmet.crearPlatoPrincipal());
+                }
+
+                boolean quierePostreGourmet = preguntarPlato(scanner, "Postre");
+                if(quierePostreGourmet){
+                    Postre postreFinalGourmet = menuSeleccionado.traerPostre();
+                    System.out.println(postreFinalGourmet.crearPostre());
+                }
+
                 break;
             case 3:
                 System.out.println("Has elegido el menú japonés.");

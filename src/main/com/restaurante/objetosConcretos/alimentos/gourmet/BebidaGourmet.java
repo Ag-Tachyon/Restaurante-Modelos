@@ -1,4 +1,4 @@
-package objetosConcretos.alimentos;
+package objetosConcretos.alimentos.gourmet;
 
 import fabricas.Bebida;
 
