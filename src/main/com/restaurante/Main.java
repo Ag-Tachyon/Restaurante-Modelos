@@ -19,7 +19,7 @@ public class Main {
         String respuesta = scanner.next();
         return respuesta.equalsIgnoreCase("s");
     }
-
+    
     public static void main(String[] args) {
         System.out.println("\nBienvenido, elige el tipo de menú que quieres: \n1. Vegetariano 🥒 \n2. Gourmet 🍔 \n3. Japonés 🍙");
     
