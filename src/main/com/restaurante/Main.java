@@ -7,7 +7,9 @@ import fabricas.Postre;
 import fabricas.fabricaMenu;
 import objetosConcretos.menus.MenuVegetariano;
 import objetosConcretos.alimentos.gourmet.PostreGourmet;
+import objetosConcretos.alimentos.vegetariana.platoPrincipalVeg;
 import objetosConcretos.menus.MenuGourmet;
+import objetosConcretos.menus.MenuJapon;
 
 public class Main {
 
@@ -17,7 +19,6 @@ public class Main {
         String respuesta = scanner.next();
         return respuesta.equalsIgnoreCase("s");
     }
-
 
     public static void main(String[] args) {
         System.out.println("\nBienvenido, elige el tipo de menú que quieres: \n1. Vegetariano 🥒 \n2. Gourmet 🍔 \n3. Japonés 🍙");
@@ -96,7 +97,33 @@ public class Main {
 
                 break;
             case 3:
+                menuSeleccionado = new MenuJapon();
                 System.out.println("Has elegido el menú japonés.");
+
+                boolean quiereEntradaJapon = preguntarPlato(scanner, "Entrada");
+                if(quiereEntradaJapon){
+                    Entrada entradaFinalJapon = menuSeleccionado.traerEntrada();
+                    System.out.println(entradaFinalJapon.crearEntrada());
+                }
+
+                boolean quiereBebidaJapon = preguntarPlato(scanner, "Bebida");
+                if(quiereBebidaJapon){
+                    Bebida babidaFinalJapon = menuSeleccionado.traerBebida();
+                    System.out.println(babidaFinalJapon.crearBebida());
+                }
+                
+                boolean quierePlatoPrincipalJapon = preguntarPlato(scanner, "Plato Principal");
+                if(quierePlatoPrincipalJapon){
+                    PlatoPrincipal platoPrincFinalJapon = menuSeleccionado.traerPlatoPrincipal();
+                    System.out.println(platoPrincFinalJapon.crearPlatoPrincipal());
+                }
+                
+                boolean quierePostreJapon = preguntarPlato(scanner, "Postre");
+                if(quierePostreJapon){
+                    Postre postreJapon = menuSeleccionado.traerPostre();
+                    System.out.println(postreJapon.crearPostre());
+                }
+
                 break;
             default:
                 System.out.println("Opción no válida.");

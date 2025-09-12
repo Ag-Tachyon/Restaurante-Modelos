@@ -4,6 +4,6 @@ import fabricas.Postre;
 public class PostreGourmet implements Postre {
    @Override
    public String crearPostre() {
-       return "Crear Postre";
+       return "Creando Postre";
    }
 }
